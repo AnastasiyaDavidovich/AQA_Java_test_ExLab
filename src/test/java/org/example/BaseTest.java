@@ -56,16 +56,16 @@ protected static Actions actions;
         return driver.getTitle();
     }
 
-    public void click(By locator) {
-        driver.findElement(locator).click();
-    }
+//    public void click(By locator) {
+//        driver.findElement(locator).click();
+//    }
 
     public void moveTo(WebElement webElement) {
         actions.scrollToElement(webElement).build().perform();
     }
 
     public void Wait() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
     }
    }

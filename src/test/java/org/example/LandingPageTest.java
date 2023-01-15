@@ -121,53 +121,133 @@ public class LandingPageTest extends BaseTest  {
     }
 
 
-    @Test  // Test 14 Отображение кнопки [Присоединиться]
+    @Test  // Test 14 Join button is displayed
     public void isJoinButtonVisible() {
         Assert.assertTrue(LandingPage.joinButton.isDisplayed());
     }
 
-    @Test  // Test 16 Отображение надписи О нас
+    @Test  // Test 16 About Us header is displayed
     public void isSectionAboutUsTitleVisible() throws InterruptedException {
         LandingPage.linkAboutUS.click();
         Wait();
         Assert.assertTrue(LandingPage.sectionAboutUsTitle.isDisplayed());
     }
 
-    @Test  // Test 17 -Отображение текста под надписью О нас
+    @Test  // Test 17 About Us text is displayed
     public void isSectionAboutUsTextVisible() throws InterruptedException {
         LandingPage.linkAboutUS.click();
         Wait();
         Assert.assertTrue(LandingPage.sectionAboutUsText.isDisplayed());
     }
 
-    @Test  // Test 18 -Отображение надписи Почему ExLab?
+    @Test  // Test 18 Why ExLab subheader is displayed
     public void isSectionAboutUsListTitleVisible()  {
-        LandingPage.linkAboutUS.click();
         moveTo(LandingPage.sectionAboutUsListTitle);
         Assert.assertTrue(LandingPage.sectionAboutUsListTitle.isDisplayed());
     }
 
-    @Test  // Test 19 --Отображение текста под надписью Почему ExLab?
+    @Test  // Test 19 Why ExLab text is displayed
     public void isSectionAboutUsListTextVisible()  {
-        LandingPage.linkAboutUS.click();
         moveTo(LandingPage.sectionAboutUsListText);
         Assert.assertTrue(LandingPage.sectionAboutUsListText.isDisplayed());
     }
 
-    @Test  // Test 20 Отображение кнопки [Присоединиться] в разделе О нас
-    public void isAboutUsJoinButton() throws InterruptedException {
-        LandingPage.linkAboutUS.click();
-        moveTo(LandingPage.sectionAboutUsListTitle);
-        Wait();
+    @Test  // Test 20 Join button is displayed в разделе О нас
+    public void isAboutUsJoinButton() {
+        moveTo(LandingPage.aboutUsJoinButton);
         Assert.assertTrue(LandingPage.aboutUsJoinButton.isDisplayed());
     }
 
-    @Test  // Test 21 Отображение надписи Проекты
+    @Test  // Test 22 Projects header is displayed
     public void isSectionProjectsTitle() throws InterruptedException {
         LandingPage.linkProjects.click();
         Wait();
         Assert.assertTrue(LandingPage.sectionProjectsTitle.isDisplayed());
     }
+
+    @Test  // Test 23_1 ExLab logo is displayed at Projects module
+    public void isExLabLogoDisplayed() {
+        moveTo(LandingPage.firstProjectLogo);
+        Assert.assertTrue(LandingPage.firstProjectLogo.isDisplayed());
+    }
+
+    @Test  // Test 23_2 HealthyLife logo is displayed at Projects module
+    public void isHealthyLifeLogoDisplayed() {
+        moveTo(LandingPage.secondProjectLogo);
+        Assert.assertTrue(LandingPage.secondProjectLogo.isDisplayed());
+    }
+
+    @Test  // Test 23_3 Easyhelp logo is displayed at Projects module
+    public void isEasyhelpLogoDisplayed() {
+        moveTo(LandingPage.thirdProjectLogo);
+        Assert.assertTrue(LandingPage.thirdProjectLogo.isDisplayed());
+    }
+
+    @Test  // Test 24_1 ExLab text is displayed at Projects module
+    public void isExLabTextDisplayed() {
+        moveTo(LandingPage.firstProjectText);
+        Assert.assertTrue(LandingPage.firstProjectText.isDisplayed());
+    }
+
+    @Test  // Test 24_2 HealthyLife text is displayed at Projects module
+    public void isHealthyLifeTextDisplayed() {
+        moveTo(LandingPage.secondProjectText);
+        Assert.assertTrue(LandingPage.secondProjectText.isDisplayed());
+    }
+
+    @Test  // Test 24_3 Easyhelp text is displayed at Projects module
+    public void isEasyhelpTextDisplayed() {
+        moveTo(LandingPage.thirdProjectText);
+        Assert.assertTrue(LandingPage.thirdProjectText.isDisplayed());
+    }
+
+    @Test  // Test 25 Mentors header is displayed
+    public void isSectionMentorsTitletDisplayed() throws InterruptedException {
+        LandingPage.linkMentors.click();
+        Wait();
+        Assert.assertTrue(LandingPage.sectionMentorsTitle.isDisplayed());
+    }
+
+    @Test  // Test 26 Mentors info opens by "+" click
+    public void isMentorsInfoOpensByClick() throws InterruptedException {
+        LandingPage.linkMentors.click();
+        Wait();
+        LandingPage.firstMentorSpoiler.click();
+        Wait();
+        Assert.assertTrue(LandingPage.firstMentorName.isDisplayed());
+        Assert.assertTrue(LandingPage.firstMentorSkillsList.isDisplayed());
+    }
+
+    @Test  // Test 27 Mentors foto is displayed
+    public void isMentorsMentorsFotoDisplayed() throws InterruptedException {
+        LandingPage.linkMentors.click();
+        Wait();
+        LandingPage.secondMentorSpoiler.click();
+        Wait();
+        Assert.assertTrue(LandingPage.secondMentorName.isDisplayed());
+        Assert.assertTrue(LandingPage.secondMentorPhoto.isDisplayed());
+    }
+
+    @Test  // Test 29 Mentors info is closed by clicking "-"
+    public void isMentorsInfoClosedByClick() throws InterruptedException {
+        LandingPage.linkMentors.click();
+        Wait();
+        Assert.assertTrue(LandingPage.sectionMentorsTitle.isDisplayed());
+        LandingPage.secondMentorSpoiler.click();
+        Wait();
+        Assert.assertTrue(LandingPage.secondMentorPhoto.isDisplayed());
+        LandingPage.secondMentorSpoiler.click();
+        Wait();
+        Assert.assertFalse(LandingPage.secondMentorPhoto.isDisplayed());
+    }
+
+    @Test  // Test 30 Became mentor button is displayed
+    public void isMentorsJoinButtonDisplayed() {
+        moveTo(LandingPage.mentorsJoinButton);
+        Assert.assertTrue(LandingPage.mentorsJoinButton.isDisplayed());
+    }
+
+
 
 
 

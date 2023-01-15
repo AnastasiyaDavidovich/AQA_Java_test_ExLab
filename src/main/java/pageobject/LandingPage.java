@@ -106,54 +106,54 @@ public class LandingPage extends BasePage {
     public WebElement sectionProjectsTitle;
 //    @FindBy(xpath = "//*[@id='projects']//div[1]/h2")
 //    private WebElement firstProjectName;
-//    @FindBy(xpath = "//*[@id='projects']//div[1]/img")
-//    private WebElement firstProjectLogo;
-//    @FindBy(xpath = "//*[@id='projects']//div[1]/p")
-//    private WebElement firstProjectText;
+    @FindBy(xpath = "//*[@id='projects']//div[1]/img")
+    public WebElement firstProjectLogo;
+    @FindBy(xpath = "//*[@id='projects']//div[1]/p")
+    public WebElement firstProjectText;
 //    @FindBy(xpath = "//*[@id='projects']//div[1]/span")
 //    private WebElement firstProjectOwner;
 ////   ===
 //    @FindBy(xpath = "//*[@id='projects']//div[2]/h2")
 //    private WebElement secondProjectName;
-//    @FindBy(xpath = "//*[@id='projects']//div[2]/img")
-//    private WebElement secondProjectLogo;
-//    @FindBy(xpath = "//*[@id='projects']//div[2]/p")
-//    private WebElement secondProjectText;
+    @FindBy(xpath = "//*[@id='projects']//div[2]/img")
+    public WebElement secondProjectLogo;
+    @FindBy(xpath = "//*[@id='projects']//div[2]/p")
+    public WebElement secondProjectText;
 //    @FindBy(xpath = "//*[@id='projects']//div[2]/span")
 //    private WebElement secondProjectOwner;
 ////   ===
 //    @FindBy(xpath = "//*[@id='projects']//div[3]/h2")
 //    private WebElement thirdProjectName;
-//    @FindBy(xpath = "//*[@id='projects']//div[3]/img")
-//    private WebElement thirdProjectLogo;
-//    @FindBy(xpath = "//*[@id='projects']//div[3]/p")
-//    private WebElement thirdProjectText;
+    @FindBy(xpath = "//*[@id='projects']//div[3]/img")
+    public WebElement thirdProjectLogo;
+    @FindBy(xpath = "//*[@id='projects']//div[3]/p")
+    public WebElement thirdProjectText;
 //    @FindBy(xpath = "//*[@id='projects']//div[3]/span")
 //    private WebElement thirdProjectOwner;
 ////  ====== Mentors
-//    @FindBy(xpath = "//*[@id='mentors']/div[1]")
-//    private WebElement sectionMentorsTitle;
-//    @FindBy(xpath = "//*[@id='mentors']//div[1]/div[1]/p[1]")
-//    private WebElement firstMentorName;
+    @FindBy(xpath = "//*[@id='mentors']/div[1]")
+    public WebElement sectionMentorsTitle;
+    @FindBy(xpath = "//*[@id='mentors']//div[1]/div[1]/p[1]")
+    public WebElement firstMentorName;
 //    @FindBy(xpath = "//*[@id='mentors']//div[1]/div[1]/p[2]")
 //    private WebElement firstMentorJobTitle;
-//    @FindBy(xpath = "//*[@id='mentors']//div[1]/div[1]/span")
-//    private WebElement firstMentorSpoiler;
-//    @FindBy(xpath = "//*[@id='mentors']//div[1]/div[2]/ul")
-//    private WebElement firstMentorSkillsList;
+    @FindBy(xpath = "//*[@id='mentors']//div[1]/div[1]/span")
+    public WebElement firstMentorSpoiler;
+    @FindBy(xpath = "//*[@id='mentors']//div[1]/div[2]/ul")
+    public WebElement firstMentorSkillsList;
 //    @FindBy(xpath = "//*[@id='mentors']//div[1]//img")
 //    private WebElement firstMentorPhoto;
 ////    ===
-//    @FindBy(xpath = "//*[@id='mentors']//div[2]/div[1]/p[1]")
-//    private WebElement secondMentorName;
+    @FindBy(xpath = "//*[@id='mentors']//div[2]/div[1]/p[1]")
+    public WebElement secondMentorName;
 //    @FindBy(xpath = "//*[@id='mentors']//div[2]/div[1]/p[2]")
 //    private WebElement secondMentorJobTitle;
-//    @FindBy(xpath = "//*[@id='mentors']//div[2]/div[1]/span")
-//    private WebElement secondMentorSpoiler;
+    @FindBy(xpath = "//*[@id='mentors']//div[2]/div[1]/span")
+    public WebElement secondMentorSpoiler;
 //    @FindBy(xpath = "//*[@id='mentors']//div[2]/div[2]/ul")
 //    private WebElement secondMentorSkillsList;
-//    @FindBy(xpath = "//*[@id='mentors']//div[2]//img")
-//    private WebElement secondMentorPhoto;
+    @FindBy(xpath = "//*[@id='mentors']//div[2]/div[2]/img")
+    public WebElement secondMentorPhoto;
 ////    ===
 //    @FindBy(xpath = "//*[@id='mentors']//div[3]/div[1]/p[1]")
 //    private WebElement thirdMentorName;
@@ -177,8 +177,8 @@ public class LandingPage extends BasePage {
 //    @FindBy(xpath = "//*[@id='mentors']//div[4]//img")
 //    private WebElement fourthMentorPhoto;
 ////    ===
-//    @FindBy(xpath = "//*[@id='mentors']/div[2]/div[2]/a")
-//    private WebElement mentorsJoinButton;
+    @FindBy(xpath = "//*[@id='mentors']/div[2]/div[2]/a")
+    public WebElement mentorsJoinButton;
 //    @FindBy(xpath = "//*[@id='mentors']/div[2]/div[2]/a/text()")
 //    private WebElement mentorsJoinButtonText;
 ////    ==== StartUp
