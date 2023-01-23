@@ -19,6 +19,7 @@ import pageobject.BasePage;
 
 import java.time.Duration;
 
+import static Utils.Config.THREAD_SLEEP;
 import static driver.driver.*;
 
 
@@ -65,7 +66,7 @@ protected static Actions actions;
     }
 
     public void Wait() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(THREAD_SLEEP);
 
     }
    }

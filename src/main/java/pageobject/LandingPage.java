@@ -182,8 +182,8 @@ public class LandingPage extends BasePage {
 //    @FindBy(xpath = "//*[@id='mentors']/div[2]/div[2]/a/text()")
 //    private WebElement mentorsJoinButtonText;
 ////    ==== StartUp
-//    @FindBy(xpath = "//*[@id='startup-title-wrapper']/div")
-//    private WebElement sectionStartUpTitle;
+    @FindBy(xpath = "//*[@id='startup-title-wrapper']/div")
+    public WebElement sectionStartUpTitle;
 //    @FindBy(xpath = "//*[@id='startup-title-wrapper']//div[1]/h2")
 //    private WebElement startUpForJunTitle;
 //    @FindBy(xpath = "//*[@id='startup-title-wrapper']//div[1]/p[1]")
