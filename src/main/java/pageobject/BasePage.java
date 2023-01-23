@@ -7,7 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 import static driver.driver.getDriver;
@@ -21,5 +20,7 @@ public class BasePage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
+
+    
 
   }

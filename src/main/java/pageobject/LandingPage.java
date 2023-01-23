@@ -1,10 +1,12 @@
 package pageobject;
 
-import org.openqa.selenium.By;
+import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
 
 public class LandingPage extends BasePage {
 
@@ -12,14 +14,94 @@ public class LandingPage extends BasePage {
         super(driver);
     }
 
+    public void ifLogoDisplayed(){
+        logo.isDisplayed();
+    }
+
+    public void ifLinkAboutUS(){
+        linkAboutUS.isDisplayed();
+    }
+
+    public LandingPage linkAboutUsClick() {
+        linkAboutUS.click();
+        return this;
+    }
+
+    public void ifSectionAboutUsTitle(){
+        sectionAboutUsTitle.isDisplayed();
+    }
+
+    public void ifLinkProjects(){
+        linkProjects.isDisplayed();
+    }
+
+    public LandingPage linkProjectsClick() {
+        linkProjects.click();
+        return this;
+    }
+
+    public void ifSectionProjectsTitle(){
+        sectionProjectsTitle.isDisplayed();
+    }
+
+    public void ifLinkMentors(){
+        linkMentors.isDisplayed();
+    }
+
+    public LandingPage linkMentorsClick() {
+        linkMentors.click();
+        return this;
+    }
+
+    public void ifSectionMentorsTitle(){
+        sectionMentorsTitle.isDisplayed();
+    }
+
+    public void ifLinkStartUp(){
+        linkStartUps.isDisplayed();
+    }
+
+    public LandingPage linkStartUpClick() {
+        linkStartUps.click();
+        return this;
+    }
+
+    public void ifSectionStartUpTitle(){
+        sectionStartUpTitle.isDisplayed();
+    }
+
+    public void ifThemeIcon(){
+        themeIcon.isDisplayed();
+    }
+
+    public void ifJoinButton(){
+        joinButton.isDisplayed();
+    }
+
+    public LandingPage joinBtnInHeaderClick() {
+        joinButton.click();
+        return this;
+    }
+    public LandingPage navigateTo() {
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        return this;
+    }
+
+    public String telegramUrlIsExpected() {
+        return driver.getCurrentUrl();
+    }
+
+
+
     @FindBy(xpath = "//*[@id='logo_mobile']")
-    public WebElement logo;
+    WebElement logo;
 
     @FindBy(xpath = "//*[@id='header']/div[1]//li[1]/a")
-    public WebElement linkAboutUS;
+    WebElement linkAboutUS;
 
     @FindBy(xpath = "//*[@id='header']/div[1]//li[2]/a")
-    public WebElement linkProjects;
+    WebElement linkProjects;
 
     @FindBy(xpath = "//*[@id='header']/div[1]//li[3]/a")
     public WebElement linkMentors;

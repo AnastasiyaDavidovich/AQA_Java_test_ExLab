@@ -1,35 +1,21 @@
 package org.example;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import pageobject.BasePage;
+import org.testng.annotations.*;
 import pageobject.LandingPage;
 
-import java.time.Duration;
-
 import static Utils.Config.BASE_URL;
-import static driver.driver.*;
 
 public class LandingPageTest extends BaseTest  {
 
-    public  LandingPage LandingPage;
+    public LandingPage LandingPage;
     @BeforeMethod
     public void start () {
         super.Start(BASE_URL);
         LandingPage = new LandingPage(driver);
     }
 
-    @AfterTest
+    @AfterMethod
     public void finish() {
         super.Finish();
     }
@@ -40,7 +26,7 @@ public class LandingPageTest extends BaseTest  {
         Assert.assertEquals(url, "http://test.exlab.team/", "Test failed: Url is not the same");
         String title = GetTitle();
         Assert.assertEquals(title,"ExLab Landing", "Test failed: title is not the same");
-        Assert.assertTrue(LandingPage.logo.isDisplayed());
+        LandingPage.ifLogoDisplayed();
         System.out.println("________________________\ntest passed: website is opened:\n- URL is the same\n- Title is the same" +
                 "\n- Logo is visible\n________________________");
     }
@@ -56,47 +42,47 @@ public class LandingPageTest extends BaseTest  {
 
     @Test(description = "Test 3 ExLab logo is displayed")
     public void isLogoVisible() {
-        Assert.assertTrue(LandingPage.logo.isDisplayed());
+        LandingPage.ifLogoDisplayed();
     }
 
     @Test(description = "Test 4 Menu item About us is displayed")
     public void isLinkAboutUSVisible() {
-        Assert.assertTrue(LandingPage.linkAboutUS.isDisplayed());
+        LandingPage.ifLinkAboutUS();
     }
 
     @Test(description = "Test 5 About us menu link opens About us module")
     public void aboutLinkExist() throws InterruptedException {
-        LandingPage.linkAboutUS.click();
+        LandingPage.linkAboutUsClick();
         Wait();
-        Assert.assertTrue(LandingPage.sectionAboutUsTitle.isDisplayed());
+        LandingPage.ifSectionAboutUsTitle();
 //        String aboutLink = LandingPage.linkAboutUS.getAttribute("href");
 //        Assert.assertTrue(aboutLink.contains("#about"));
     }
 
     @Test(description = "Test 6 Menu item Projects is displayed")
     public void isLinkProjectsVisible() {
-        Assert.assertTrue(LandingPage.linkProjects.isDisplayed());
+        LandingPage.ifLinkProjects();
     }
 
     @Test(description = "Test 7 Menu item Projects opens Projects module")
     public void projectsLinkExist() throws InterruptedException {
-        LandingPage.linkProjects.click();
+        LandingPage.linkProjectsClick();
         Wait();
-        Assert.assertTrue(LandingPage.sectionProjectsTitle.isDisplayed());
+        LandingPage.ifSectionProjectsTitle();
 //        String aboutLink = LandingPage.linkProjects.getAttribute("href");
 //        Assert.assertTrue(aboutLink.contains("#projects"));
     }
 
     @Test(description = "Test 8 Menu item Mentors is displayed")
     public void isLinkMentorsVisible() {
-        Assert.assertTrue(LandingPage.linkMentors.isDisplayed());
+        LandingPage.ifLinkMentors();
     }
 
     @Test(description = "Test 9 Menu item Mentors opens Mentors module")
     public void mentorsLinkExist() throws InterruptedException {
-        LandingPage.linkMentors.click();
+        LandingPage.linkMentorsClick();
         Wait();
-        Assert.assertTrue(LandingPage.sectionMentorsTitle.isDisplayed());
+        LandingPage.ifSectionMentorsTitle();
 
 //        String aboutLink = LandingPage.linkMentors.getAttribute("href");
 //        Assert.assertTrue(aboutLink.contains("#mentors"));
@@ -104,21 +90,21 @@ public class LandingPageTest extends BaseTest  {
 
     @Test(description = "Test 10 Menu item StartUp для is displayed")
     public void isLinkStartUpsVisible() {
-        Assert.assertTrue(LandingPage.linkStartUps.isDisplayed());
+        LandingPage.ifLinkStartUp();
     }
 
     @Test(description = "Test 11 Menu item StartUp opens Start up module")
     public void startUpsLinkExist() throws InterruptedException {
-        LandingPage.linkStartUps.click();
+        LandingPage.linkStartUpClick();
         Wait();
-        Assert.assertTrue(LandingPage.sectionStartUpTitle.isDisplayed());
+        LandingPage.ifSectionStartUpTitle();
 //        String aboutLink = LandingPage.linkStartUps.getAttribute("href");
 //        Assert.assertTrue(aboutLink.contains("#startup"));
     }
 
     @Test(description = "Test 12 Button Sun Icon is displayed")
     public void isThemeIconVisible() {
-        Assert.assertTrue(LandingPage.themeIcon.isDisplayed());
+        LandingPage.ifThemeIcon();
     }
 
 
@@ -139,8 +125,14 @@ public class LandingPageTest extends BaseTest  {
 
     @Test(description = "Test 14 Join button is displayed")
     public void isJoinButtonVisible() {
-        Assert.assertTrue(LandingPage.joinButton.isDisplayed());
+        LandingPage.ifJoinButton();
     }
+
+//    @Test(description = "Test 15 Join button opens telegram inviting page")
+//    public void isJoinButtonOpensInviting() {
+//        LandingPage.joinBtnInHeaderClick().navigateTo();
+//        Assert.assertEquals(LandingPage.telegramUrlIsExpected(), "https://t.me/ExLab_registration_bot");
+//    }
 
     @Test(description = "Test 16 About Us header is displayed")
     public void isSectionAboutUsTitleVisible() {
