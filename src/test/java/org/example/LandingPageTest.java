@@ -267,6 +267,59 @@ public class LandingPageTest extends BaseTest  {
         Assert.assertTrue(LandingPage.mentorsJoinButton.isDisplayed());
     }
 
+    @Test(description = "Test 31 StartUp header is displayed")
+    public void isStartUpTitleDisplayed() {
+        moveTo(LandingPage.sectionStartUpTitle);
+        Assert.assertTrue(LandingPage.sectionStartUpTitle.isDisplayed());
+    }
+
+    @Test(description = "Test 32 StartUp text is displayed")
+    public void isStartUpTextDisplayed() {
+        moveTo(LandingPage.sectionStartUpText);
+        Assert.assertTrue(LandingPage.sectionStartUpText.isDisplayed());
+    }
+
+    @Test(description = "Test 33 Fined button is displayed")
+    public void isFinedButtonDisplayed() {
+        moveTo(LandingPage.findButton);
+        Assert.assertTrue(LandingPage.findButton.isDisplayed());
+    }
+
+    @Test(description = "Test 34 Help project header is displayed")
+    public void isHelpProjectTitleDisplayed() {
+        moveTo(LandingPage.sectionHelpProjectTitle);
+        Assert.assertTrue(LandingPage.sectionHelpProjectTitle.isDisplayed());
+    }
+
+    @Test(description = "Test 35 Help project text is displayed")
+    public void isHelpProjectTextDisplayed() {
+        moveTo(LandingPage.sectionHelpProjectText);
+        Assert.assertTrue(LandingPage.sectionHelpProjectText.isDisplayed());
+    }
+
+    @Test(description = "Test 36 Boosty button is displayed")
+    public void isBoostyButtonDisplayed() {
+        moveTo(LandingPage.boostyButton);
+        Assert.assertTrue(LandingPage.boostyButton.isDisplayed());
+    }
+
+    @Test(description = "Test 38 Patreon button is displayed")
+    public void isPatreonButtonDisplayed() {
+        moveTo(LandingPage.patreonButton);
+        Assert.assertTrue(LandingPage.patreonButton.isDisplayed());
+    }
+
+    @Test(description = "Test 39 Contacts header is displayed")
+    public void isContactsTitleDisplayed() {
+        moveTo(LandingPage.sectionContactsTitle);
+        Assert.assertTrue(LandingPage.sectionContactsTitle.isDisplayed());
+    }
+
+    @Test(description = "Test 40 Contacts text is displayed")
+    public void isContactsTextDisplayed() {
+        moveTo(LandingPage.contactsText);
+        Assert.assertTrue(LandingPage.contactsText.isDisplayed());
+    }
 
 
 

@@ -266,6 +266,8 @@ public class LandingPage extends BasePage {
 ////    ==== StartUp
     @FindBy(xpath = "//*[@id='startup-title-wrapper']/div")
     public WebElement sectionStartUpTitle;
+    @FindBy(xpath = "//*[@id='startup']/div[2]")
+    public WebElement sectionStartUpText;
 //    @FindBy(xpath = "//*[@id='startup-title-wrapper']//div[1]/h2")
 //    private WebElement startUpForJunTitle;
 //    @FindBy(xpath = "//*[@id='startup-title-wrapper']//div[1]/p[1]")
@@ -278,30 +280,32 @@ public class LandingPage extends BasePage {
 //    private WebElement startUpForRecruiterTitle;
 //    @FindBy(xpath = "//*[@id='startup-title-wrapper']//div[2]/p[1]")
 //    private WebElement startUpForRecruiterText;
-//    @FindBy(xpath = "//*[@id='startup']/div[2]/div[2]/div")
-//    private WebElement findButton;
+    @FindBy(xpath = "//*[@id='startup']/div[2]/div[2]/div")
+    public WebElement findButton;
 //    @FindBy(xpath = "//*[@id='startup']/div[2]/div[2]/div/a")
 //    private WebElement findButtonText;
 ////    ===== Help Project
-//    @FindBy(xpath = "//*[@id='descrBg']/div[6]/div/div[1]")
-//    private WebElement sectionHelpProjectTitle;
+    @FindBy(xpath = "//*[@id='descrBg']/div[6]/div/div[1]")
+    public WebElement sectionHelpProjectTitle;
+    @FindBy(xpath = "//*[@id='descrBg']/div[6]/div/div[2]/div[1]")
+    public WebElement sectionHelpProjectText;
 //    @FindBy(xpath = "//*[@id='descrBg']/div[6]/div//div[1]/div[1]")
 //    private WebElement sectionHelpProjectText1;
 //    @FindBy(xpath = "//*[@id='descrBg']/div[6]/div//div[1]/div[2]")
 //    private WebElement sectionHelpProjectText2;
-//    @FindBy(xpath = "//*[@id='descrBg']/div[6]//a[1]")
-//    private WebElement boostyButton;
+    @FindBy(xpath = "//*[@id='descrBg']/div[6]//a[1]")
+    public WebElement boostyButton;
 //    @FindBy(xpath = "//*[@id='descrBg']/div[6]//a[1]/text()")
 //    private WebElement boostyButtonText;
-//    @FindBy(xpath = "//*[@id='descrBg']/div[6]//a[2]")
-//    private WebElement patreonButton;
+    @FindBy(xpath = "//*[@id='descrBg']/div[6]//a[2]")
+    public WebElement patreonButton;
 //    @FindBy(xpath = "//*[@id='descrBg']/div[6]//a[2]/text()")
 //    private WebElement patreonButtonText;
 ////    ===== Contacts
-//    @FindBy(xpath = "//*[@id='footer']/div[1]/div[1]")
-//    private WebElement sectionContactsTitle;
-//    @FindBy(xpath = "//*[@id='footer']/div[1]/div[2]")
-//    private WebElement contactsTexst;
+    @FindBy(xpath = "//*[@id='footer']/div[1]/div[1]")
+    public WebElement sectionContactsTitle;
+    @FindBy(xpath = "//*[@id='footer']/div[1]/div[2]")
+    public WebElement contactsText;
 //    @FindBy(xpath = "//*[@id='footer']/div[3]/div[1]/div[1]")
 //    private WebElement sectionContactsLogo;
 ////    ===
