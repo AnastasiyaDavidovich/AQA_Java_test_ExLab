@@ -130,18 +130,16 @@ public class LandingPageTest extends BaseTest  {
 
 //    @Test(description = "Test 15 Join button opens telegram inviting page")
 //    public void isJoinButtonOpensInviting() {
-//        LandingPage.joinBtnInHeaderClick().navigateTo();
-//        Assert.assertEquals(LandingPage.telegramUrlIsExpected(), "https://t.me/ExLab_registration_bot");
+//        LandingPage.joinButtonClick();
+//        LandingPage.changeToNewTab();
+//        String url = GetUrl();
+//        Assert.assertEquals(url,"https://t.me/ExLab_registration_bot", "TEST FAIL: Join button NOT opens telegram inviting page");
 //    }
 
     @Test(description = "Test 16 About Us header is displayed")
     public void isSectionAboutUsTitleVisible() {
         moveTo(LandingPage.sectionAboutUsTitle);
         Assert.assertTrue(LandingPage.sectionAboutUsTitle.isDisplayed());
-
-//        LandingPage.linkAboutUS.click();
-//        Wait();
-//        Assert.assertTrue(LandingPage.sectionAboutUsTitle.isDisplayed());
     }
 
     @Test(description = "Test 17 About Us text is displayed")
@@ -222,10 +220,6 @@ public class LandingPageTest extends BaseTest  {
     public void isSectionMentorsTitleDisplayed()  {
         moveTo(LandingPage.sectionMentorsTitle);
         Assert.assertTrue(LandingPage.sectionMentorsTitle.isDisplayed());
-
-//        LandingPage.linkMentors.click();
-//        Wait();
-//        Assert.assertTrue(LandingPage.sectionMentorsTitle.isDisplayed());
     }
 
     @Test(description = "Test 26 Mentors info opens by + click")
@@ -239,13 +233,19 @@ public class LandingPageTest extends BaseTest  {
     }
 
     @Test(description = "Test 27 Mentors foto is displayed")
-    public void isMentorsMentorsFotoDisplayed() throws InterruptedException {
+    public void isMentorsFotoDisplayed() throws InterruptedException {
         LandingPage.linkMentors.click();
         Wait();
         LandingPage.secondMentorSpoiler.click();
         Wait();
         Assert.assertTrue(LandingPage.secondMentorName.isDisplayed());
         Assert.assertTrue(LandingPage.secondMentorPhoto.isDisplayed());
+    }
+
+    @Test(description = "Test 28 Info about 4 mentors is displayed")
+    public void isInfo4MentorsDisplayed()  {
+        moveTo(LandingPage.sectionMentorsTitle);
+        Assert.assertEquals(LandingPage.countMentors(),4);
     }
 
     @Test(description = "Test 29 Mentors info is closed by clicking -")

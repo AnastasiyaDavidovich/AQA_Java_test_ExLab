@@ -7,6 +7,6 @@ public class Config {
     public static final Integer width = 1680;
     public static final Integer height = 1050;
     public static final Dimension DIMENSION = new Dimension(width, height);
-    public static final Boolean ON_HEADLESS = false;
+    public static final Boolean ON_HEADLESS = true;
     public static final String BASE_URL = "http://test.exlab.team/";
 }

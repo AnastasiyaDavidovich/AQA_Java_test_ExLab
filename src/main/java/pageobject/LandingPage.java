@@ -1,12 +1,16 @@
 package pageobject;
 
 import dev.failsafe.internal.util.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static driver.driver.getDriver;
 
 public class LandingPage extends BasePage {
 
@@ -78,20 +82,21 @@ public class LandingPage extends BasePage {
         joinButton.isDisplayed();
     }
 
-    public LandingPage joinBtnInHeaderClick() {
+    public LandingPage joinButtonClick() {
         joinButton.click();
         return this;
     }
-    public LandingPage navigateTo() {
-        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(1));
-        return this;
+
+    public void changeToNewTab() {
+        ArrayList<String> tabs = new ArrayList<>(getDriver().getWindowHandles());
+        getDriver().switchTo().window(tabs.get(1));
     }
 
-    public String telegramUrlIsExpected() {
-        return driver.getCurrentUrl();
-    }
 
+    public Integer countMentors(){
+        List<WebElement> list = mentorsBlock.findElements(By.xpath("//div[@id='mentors']/div/div/div"));
+        return list.size();
+    }
 
 
     @FindBy(xpath = "//*[@id='logo_mobile']")
@@ -215,6 +220,8 @@ public class LandingPage extends BasePage {
 ////  ====== Mentors
     @FindBy(xpath = "//*[@id='mentors']/div[1]")
     public WebElement sectionMentorsTitle;
+    @FindBy (xpath = "//div[@id='mentors']/div/div/div")
+    private WebElement mentorsBlock;
     @FindBy(xpath = "//*[@id='mentors']//div[1]/div[1]/p[1]")
     public WebElement firstMentorName;
 //    @FindBy(xpath = "//*[@id='mentors']//div[1]/div[1]/p[2]")

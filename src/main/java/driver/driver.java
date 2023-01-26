@@ -22,7 +22,7 @@ public class driver {
 
     public static void createDriver(){
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(getChromeOptions());
         driver.manage().window().setSize(DIMENSION);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().deleteAllCookies();
