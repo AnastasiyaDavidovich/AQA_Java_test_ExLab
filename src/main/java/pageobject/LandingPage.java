@@ -82,14 +82,14 @@ public class LandingPage extends BasePage {
         joinButton.isDisplayed();
     }
 
-    public LandingPage joinButtonClick() {
-        joinButton.click();
-        return this;
-    }
+//    public LandingPage joinButtonClick() {
+//        joinButton.click();
+//        return this;
+//    }
 
-    public void changeToNewTab() {
-        ArrayList<String> tabs = new ArrayList<>(getDriver().getWindowHandles());
-        getDriver().switchTo().window(tabs.get(1));
+    public void changeToNewTab(int tabNumber) {
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        getDriver().switchTo().window(tabs.get(tabNumber));
     }
 
 
@@ -117,13 +117,13 @@ public class LandingPage extends BasePage {
     @FindBy(xpath = "//*[@id='header']/div[1]/div[2]/div[2]/div[1]/div")
     public WebElement themeIcon;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[1]")
+    @FindBy(xpath = "//*[@id='root']/div/div[1]")
     public WebElement rootImg;
 
 //    @FindBy(xpath = "//*[@id='header']/div[1]/div[2]/div[2]/div[1]/div")
 //    private WebElement themeIcon;
 
-    @FindBy(xpath = "//*[@id='logo_mobile']")
+    @FindBy(xpath = "//*[@id='header']/div[1]/div[2]/div[2]/div[2]")
     public WebElement joinButton;
 
 
@@ -184,7 +184,7 @@ public class LandingPage extends BasePage {
 //    @FindBy(xpath = "//*[@id='about']//li[4]/span[2]")
 //    private WebElement aboutUsListFourthText;
 ////    ===
-    @FindBy(xpath = "//*[@id='about']/div[3]/div[2]")
+    @FindBy(xpath = "//*[@id='about']/div[3]/div[2]/a")
     public WebElement aboutUsJoinButton;
 //    @FindBy(xpath = "//*[@id='about']/div[3]/div[2]/a")
 //    public WebElement aboutUsJoinButtonText;

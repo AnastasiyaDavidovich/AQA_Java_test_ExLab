@@ -26,29 +26,29 @@ import static driver.driver.*;
 
 public class BaseTest {
 
-protected WebDriver driver;
+protected static WebDriver driver;
 protected static Actions actions;
     protected WebDriverWait waiter;
 
 
     public BaseTest()
     {
-        createDriver();
         driver = getDriver();
         actions = new Actions(driver);
         waiter = new WebDriverWait(driver, Duration.ofSeconds(5));
-
     }
 
     public void Start (String url) {
         driver.get(url);
-
     }
 
     public void Finish() {
-        quite();
+        close();
     }
 
+    public void Quit() {
+        quit();
+    }
 
     public void moveTo(WebElement webElement) {
         actions.scrollToElement(webElement).build().perform();
@@ -61,7 +61,7 @@ protected static Actions actions;
         return driver.getTitle();
     }
 
-    public String GetUrl() {
+    public static String GetUrl() {
         return driver.getCurrentUrl();
     }
    }

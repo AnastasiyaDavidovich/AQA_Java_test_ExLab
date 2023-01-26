@@ -35,8 +35,11 @@ public class driver {
         return driver;
     }
 
-    public static void quite() {
+    public static void close() {
         driver.close();
+    }
+
+    public static void quit() {
         driver.quit();
     }
 

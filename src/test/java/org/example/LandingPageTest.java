@@ -11,13 +11,15 @@ public class LandingPageTest extends BaseTest  {
     public LandingPage LandingPage;
     @BeforeMethod
     public void start () {
-        super.Start(BASE_URL);
         LandingPage = new LandingPage(driver);
+//        LandingPage.changeToNewTab(0);
+        super.Start(BASE_URL);
     }
 
-    @AfterMethod
+    @AfterTest
     public void finish() {
-        super.Finish();
+        //super.Finish();
+        super.Quit();
     }
 
     @Test(description = "Test 1 ExLab landing is available by URL /http://test.exlab.team")
@@ -128,13 +130,15 @@ public class LandingPageTest extends BaseTest  {
         LandingPage.ifJoinButton();
     }
 
-//    @Test(description = "Test 15 Join button opens telegram inviting page")
-//    public void isJoinButtonOpensInviting() {
-//        LandingPage.joinButtonClick();
-//        LandingPage.changeToNewTab();
-//        String url = GetUrl();
-//        Assert.assertEquals(url,"https://t.me/ExLab_registration_bot", "TEST FAIL: Join button NOT opens telegram inviting page");
-//    }
+    @Test(description = "Test 15 Join button opens telegram inviting page")
+    public void isJoinButtonOpensInviting() {
+        LandingPage.joinButton.click();
+        LandingPage.changeToNewTab(1);
+        String url = GetUrl();
+        Assert.assertEquals(url,"https://t.me/ExLab_registration_bot", "TEST FAIL: Join button NOT opens telegram inviting page");
+        Finish();
+        LandingPage.changeToNewTab(0);
+    }
 
     @Test(description = "Test 16 About Us header is displayed")
     public void isSectionAboutUsTitleVisible() {
@@ -168,6 +172,17 @@ public class LandingPageTest extends BaseTest  {
     public void isAboutUsJoinButton() {
         moveTo(LandingPage.aboutUsJoinButton);
         Assert.assertTrue(LandingPage.aboutUsJoinButton.isDisplayed());
+    }
+
+    @Test(description = "Test 21 Join button opens telegram inviting page")
+    public void isJoinButtonOpensInvitingPage() {
+        moveTo(LandingPage.aboutUsJoinButton);
+        LandingPage.aboutUsJoinButton.click();
+        LandingPage.changeToNewTab(1);
+        String url = GetUrl();
+        Assert.assertEquals(url,"https://t.me/ExLab_registration_bot", "TEST FAIL: Join button NOT opens telegram inviting page");
+        Finish();
+        LandingPage.changeToNewTab(0);
     }
 
     @Test(description = "Test 22 Projects header is displayed")
@@ -301,6 +316,17 @@ public class LandingPageTest extends BaseTest  {
     public void isBoostyButtonDisplayed() {
         moveTo(LandingPage.boostyButton);
         Assert.assertTrue(LandingPage.boostyButton.isDisplayed());
+    }
+
+    @Test(description = "Test 37 Boosty button opens ExLab.boosty page")
+    public void isBoostyButtonOpensBoostyPage() {
+        moveTo(LandingPage.boostyButton);
+        LandingPage.boostyButton.click();
+        LandingPage.changeToNewTab(1);
+        String url = GetUrl();
+        Assert.assertEquals(url,"https://boosty.to/exlab_startup", "TEST FAIL: Join button NOT opens ExLab.boosty page");
+        Finish();
+        LandingPage.changeToNewTab(0);
     }
 
     @Test(description = "Test 38 Patreon button is displayed")
