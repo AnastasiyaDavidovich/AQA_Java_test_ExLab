@@ -347,7 +347,90 @@ public class LandingPageTest extends BaseTest  {
         Assert.assertTrue(LandingPage.contactsText.isDisplayed());
     }
 
+    @Test(description = "Test 41 Logo ExLab in Footer is displayed")
+    public void isFooterLogoDisplayed() {
+        moveTo(LandingPage.footerLogo);
+        Assert.assertTrue(LandingPage.footerLogo.isDisplayed());
+    }
+    @Test(description = "Test 42 Logo Copywrite in footer is displayed")
+    public void isFooterCopywriteDisplayed() {
+        moveTo(LandingPage.footerCopywrite);
+        Assert.assertTrue(LandingPage.footerCopywrite.isDisplayed());
+    }
 
+    @Test(description = "Test 43 Linkedin link in footer is displayed")
+    public void isLinkedinLinkDisplayed() {
+        moveTo(LandingPage.footerLinkedinText);
+        Assert.assertTrue(LandingPage.footerLinkedinText.isDisplayed());
+    }
 
+    @Test(description = "Test 44 Linkedin link in footer opens correct page")
+    public void isLinkedinLinkOpenLinkedinPage() {
+        moveTo(LandingPage.footerLinkedinLink);
+        LandingPage.footerLinkedinLink.click();
+        LandingPage.changeToNewTab(1);
+        String url = GetUrl();
+        Assert.assertTrue(url.contains("linkedin.com"), "TEST FAIL: Join button NOT opens Linkedin page");
+        Finish();
+        LandingPage.changeToNewTab(0);
+    }
+
+    @Test(description = "Test 45 Instagram link in footer is displayed")
+    public void isInstagramLinkDisplayed() {
+        moveTo(LandingPage.footerInstaText);
+        Assert.assertTrue(LandingPage.footerInstaText.isDisplayed());
+    }
+
+    @Test(description = "Test 46 Instagram link in footer opens correct page")
+    public void isInstagramLinkOpenLinkedinPage() {
+        moveTo(LandingPage.footerInstaLink);
+        LandingPage.footerInstaLink.click();
+        LandingPage.changeToNewTab(1);
+        String url = GetUrl();
+        Assert.assertTrue(url.contains("instagram.com"), "TEST FAIL: Join button NOT opens Instagram page");
+        Finish();
+        LandingPage.changeToNewTab(0);
+    }
+
+    @Test(description = "Test 47 Telegram link in footer is displayed")
+    public void isTelegramLinkDisplayed() {
+        moveTo(LandingPage.footerTelegramText);
+        Assert.assertTrue(LandingPage.footerTelegramText.isDisplayed());
+    }
+
+    @Test(description = "Test 48 Telegram link in footer opens correct page")
+    public void isTelegramLinkOpenLinkedinPage() {
+        moveTo(LandingPage.footerTelegramLink);
+        LandingPage.footerTelegramLink.click();
+        LandingPage.changeToNewTab(1);
+        String url = GetUrl();
+        Assert.assertTrue(url.contains("t.me/ExLabChannel"), "TEST FAIL: Join button NOT opens Telegram page");
+        Finish();
+        LandingPage.changeToNewTab(0);
+    }
+
+    @Test(description = "Test 49 Youtube link in footer is displayed")
+    public void isYoutubeLinkDisplayed() {
+        moveTo(LandingPage.footerYoutubeText);
+        Assert.assertTrue(LandingPage.footerYoutubeText.isDisplayed());
+    }
+
+    @Test(description = "Test 50 Telegram link in footer opens correct page")
+    public void isYoutubeLinkOpenLinkedinPage() {
+        moveTo(LandingPage.footerYoutubeLink);
+        LandingPage.footerYoutubeLink.click();
+        LandingPage.changeToNewTab(1);
+        String url = GetUrl();
+        Assert.assertTrue(url.contains("youtube.com"), "TEST FAIL: Join button NOT opens Youtube page");
+        Finish();
+        LandingPage.changeToNewTab(0);
+    }
+
+    @Test(description = "Test 51 Exlab e-mail link in footer is displayed")
+    public void isMailLinkDisplayed() {
+        moveTo(LandingPage.footerMailLink);
+        Assert.assertTrue(LandingPage.footerMailLink.isDisplayed());
+    }
 
 }
+

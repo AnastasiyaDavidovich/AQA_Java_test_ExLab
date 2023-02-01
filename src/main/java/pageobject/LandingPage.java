@@ -316,24 +316,28 @@ public class LandingPage extends BasePage {
 //    @FindBy(xpath = "//*[@id='footer']/div[3]/div[1]/div[1]")
 //    private WebElement sectionContactsLogo;
 ////    ===
-//    @FindBy(xpath = "//*[@id='footer']/div[3]//li[1]")
-//    private WebElement contactsLinkedinText;
-//    @FindBy(xpath = "//*[@id='footer']/div[3]//li[1]/a")
-//    private WebElement contactsLinkedinLink;
-//    @FindBy(xpath = "//*[@id='footer']/div[3]//li[2]")
-//    private WebElement contactsInstaText;
-//    @FindBy(xpath = "//*[@id='footer']/div[3]//li[2]/a")
-//    private WebElement contactsInstaLink;
-//    @FindBy(xpath = "//*[@id='footer']/div[3]//li[3]")
-//    private WebElement contactsTelegramText;
-//    @FindBy(xpath = "//*[@id='footer']/div[3]//li[3]/a")
-//    private WebElement contactsTelegramLink;
-//    @FindBy(xpath = "//*[@id='footer']/div[3]//li[4]")
-//    private WebElement contactsYoutubeText;
-//    @FindBy(xpath = "//*[@id='footer']/div[3]//li[4]/a")
-//    private WebElement contactsYoutubeLink;
-//    @FindBy(xpath = "//*[@id='footer']/div[3]/div[2]/a")
-//    private WebElement contactsMailLink;
+    @FindBy(xpath = "//*[@id='footer']/div[3]/div[1]/div[1]")
+    public WebElement footerLogo;
+    @FindBy(xpath = "//*[@id='footer']/div[3]/div[1]/div[2]")
+    public WebElement footerCopywrite;
+    @FindBy(xpath = "//*[@id='footer']/div[3]//li[1]")
+    public WebElement footerLinkedinText;
+    @FindBy(xpath = "//*[@id='footer']/div[3]//li[1]/a")
+    public WebElement footerLinkedinLink;
+    @FindBy(xpath = "//*[@id='footer']/div[3]//li[2]")
+    public WebElement footerInstaText;
+    @FindBy(xpath = "//*[@id='footer']/div[3]//li[2]/a")
+    public WebElement footerInstaLink;
+    @FindBy(xpath = "//*[@id='footer']/div[3]//li[3]")
+    public WebElement footerTelegramText;
+    @FindBy(xpath = "//*[@id='footer']/div[3]//li[3]/a")
+    public WebElement footerTelegramLink;
+    @FindBy(xpath = "//*[@id='footer']/div[3]//li[4]")
+    public WebElement footerYoutubeText;
+    @FindBy(xpath = "//*[@id='footer']/div[3]//li[4]/a")
+    public WebElement footerYoutubeLink;
+    @FindBy(xpath = "//*[@id='footer']/div[3]/div[2]/a")
+    public WebElement footerMailLink;
 
 
 
