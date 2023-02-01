@@ -60,6 +60,10 @@
           </suiteXmlFiles>
 <!--          <source>11</source>-->
 <!--          <target>11</target>-->
+
+<!--          чтобы allure отчет формировался, даже если тесты падают-->
+          <testFailureIgnore>true</testFailureIgnore>
+
           <argLine>    -javaagent:"C:/Java_org/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
           </argLine>
           <systemProperties>
