@@ -1,20 +1,15 @@
 package driver;
 
-import Utils.Config;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
+import static Utils.Config.*;
 
-
-import static Utils.Config.DIMENSION;
-import static Utils.Config.ON_HEADLESS;
 
 public class driver {
 
@@ -23,8 +18,9 @@ public class driver {
     public static void createDriver(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(getChromeOptions());
+
         driver.manage().window().setSize(DIMENSION);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITY_WAIT));
         driver.manage().deleteAllCookies();
 
     }

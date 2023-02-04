@@ -3,8 +3,19 @@
 
 <suite name="test">
     <test name="test">
+        <groups>
+            <run>
+                <include name="Header"/>
+                <include name="AboutUS"/>
+                <include name="Projects"/>
+                <include name="Mentors"/>
+                <include name="StartUp"/>
+                <include name="Help"/>
+                <include name="Footer"/>
+            </run>
+        </groups>
         <classes>
-            <class name="org.example.LandingPageTest"></class>
+            <class name="org.example.LandingPageTest"/>
         </classes>
     </test>
 </suite>
